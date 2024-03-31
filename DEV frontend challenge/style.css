@@ -1,0 +1,272 @@
+/* Reset default styles and set background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #008cff;
+  background: url(HikoWs.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Styles for the "summer-camp" heading */
+.summer-camp {
+  font-style: italic;
+  color: rgb(0, 204, 255);
+  border-color: rgb(0, 89, 255);
+  text-shadow: 0px 0px 50px rgb(255, 145, 0);
+  font-size: 115px;
+  position: absolute;
+  top: 100px;
+  left: 230px;
+  font-family: 'Honk', system-ui;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Pseudo-element for animation on hover */
+.summer-camp::before {
+  content: '-';
+  position: absolute;
+  font-size: 95px;
+  font-family: 'Honk', system-ui;
+  left: -470px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.summer-camp:hover::before {
+  left: -70px;
+  opacity: 1;
+}
+
+/* Styles for the camp activities inquiry form */
+#camp-activities-inquiry {
+  max-width: 500px;
+  margin-left: 59%;
+  margin-top: 8%;
+  background: linear-gradient(to bottom, #fbdfb5, #dab98e);
+  opacity: 1;
+  padding: 50px;
+  padding-top: 30px;
+  border-radius: 60px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+/* Styles for headings */
+h1 {
+  text-align: center;
+  color: #249196;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 32px;
+  margin-bottom: 30px;
+  z-index: 3;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+/* Styles for form elements */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  background-color: #008cff;
+  cursor: pointer;
+}
+
+option {
+  background-color: #ecd3bc;
+  color: rgb(0, 0, 0);
+  backdrop-filter: blur(50px);
+  border-radius: 40px;
+  text-align: center;
+}
+
+option:first-child {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+label {
+  margin-bottom: 10px;
+  color: #949494;
+  font-size: 16px;
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* Styles for label animations */
+label[for="food-allergies"]::before,
+label[for="additional-info"]::before,
+label[for="activity-select"]::before {
+  content: "➤";
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  font-size: 16px;
+  margin-left: -20px;
+  margin-top: -1px;
+  transition: 0.4s;
+  transform: translateX(-100%);
+}
+
+label.focused_allergies::before,
+label.focused_info::before,
+label.focused_activity::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* General styles for select and textarea */
+select,
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Focus styles */
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #289499;
+}
+
+/* Animation styles */
+.show {
+  opacity: 1;
+  transform: translateX(0);
+  transform: blur(0);
+}
+
+/* Styles for panda image */
+.panda {
+  position: absolute;
+  top: 60px;
+  right: 22%;
+}
+
+/* Button styles */
+button {
+  padding: 12px 20px;
+  background-color: #58a39b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.8s;
+  font-family: 'Archivo', sans-serif;
+}
+
+/* Pseudo-element for button animation */
+button::before {
+  content: '';
+  background: repeating-linear-gradient(white, rgb(209, 209, 209));
+  opacity: 0.2;
+  z-index: 2;
+  left: -100%;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.8s;
+  transform: rotate(0deg);
+  border-radius: 1px;
+  font-weight: bold;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* Text selection style */
+::selection {
+  color: brown;
+}
+
+@media(max-width: 1366px){
+
+  .summer-camp {
+    left:60px;
+    font-size: 85px;
+  }
+
+  .panda {
+    right:19%;
+    top:10px;
+  }
+
+  #camp-activities-inquiry {
+    margin-left: 54%;
+  }
+
+}
+
+.thank-you {
+  width:250px;
+  height:90px;
+  background-color: rgb(255, 207, 117);
+  border-radius: 20px;
+  opacity: 1;
+  text-align: center;
+  font-size: '';
+  position: absolute;
+  right:360px;
+  z-index: -2;
+  bottom:200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.animation {
+  transform: translateY(0);
+  animation: downTop 4s;
+}
+
+@keyframes downTop {
+
+
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(200px);
+    }
+
+
+    100% {
+      transform: translateY(0);
+      z-index: 3;
+    }
+
+}
