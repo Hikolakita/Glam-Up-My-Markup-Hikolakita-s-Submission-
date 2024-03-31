@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var campForm = document.getElementById("camp-form");
     
     campForm.addEventListener("submit", function(event) {
-        // Empêche le comportement par défaut de soumission du formulaire
         event.preventDefault();
 
 
@@ -87,31 +86,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var submitButtons = document.querySelectorAll('button[type="submit"]');
 
-// Boucle à travers chaque élément de la NodeList
 submitButtons.forEach(function(button) {
-    // Ajoute un écouteur d'événements 'click' à chaque bouton
+    // Add an event lister to submit button.
     button.addEventListener('click', function() {
-        // Afficher le popup "Thank you!"
+        // Show 'Thank you!' popup.
         thankYouPopup.classList.add('animation');
     });
 });
 
 
-submitButtons.addEventListener('animationend', function() {
-    submitButtons.style.zIndex = 3;
-})
-
-
-
-
-/*
-const observer = new IntersectionObserver ((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry)
-
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-});
-*/
