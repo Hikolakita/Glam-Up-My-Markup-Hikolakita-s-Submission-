@@ -87,11 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
 var submitButtons = document.querySelectorAll('button[type="submit"]');
 
 submitButtons.forEach(function(button) {
-    // Add an event lister to submit button.
     button.addEventListener('click', function() {
-        // Show 'Thank you!' popup.
         thankYouPopup.classList.add('animation');
     });
 });
-
 
